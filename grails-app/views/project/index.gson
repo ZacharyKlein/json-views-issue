@@ -1,0 +1,8 @@
+
+model {
+    List projects
+}
+
+json {
+    projects tmpl.project(projects)
+}

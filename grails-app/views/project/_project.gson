@@ -1,0 +1,14 @@
+import groovy.transform.Field
+
+@Field Map project
+
+json {
+
+    //field tmpl.render(project.metadata)
+
+    products project.products.collect { product ->
+        [id   : product["id"],
+         name : product["name"],
+         field: tmpl.render(project.metadata)]
+    }
+}
